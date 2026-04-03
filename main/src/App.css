@@ -1,0 +1,171 @@
+/* This tells the browser to include borders and padding in the total width */
+* { box-sizing: border-box; }
+
+/* This creates the smooth sliding animation when a navbar link is clicked */
+html { scroll-behavior: smooth; }
+
+/* This targets the main body of the webpage */
+body {
+  /* Removes the default white border around the edges of the screen */
+  margin: 0;
+  /* Sets the background color of the entire page to pure black */
+  background-color: #000000;
+  /* Sets the default text color to white */
+  color: #ffffff;
+  /* Chooses a clean, modern font for all the text */
+  font-family: 'Inter', sans-serif;
+  /* Forces the webpage to take up exactly 100% of the screen width */
+  width: 100%;
+  /* Hides any accidental horizontal scrolling so the page doesn't move left/right */
+  overflow-x: hidden; 
+}
+
+/* This styles the navigation bar container at the top */
+.navbar {
+  /* Uses Flexbox to easily arrange the logo and links side-by-side */
+  display: flex;
+  /* Pushes the logo to the far left and the links to the far right */
+  justify-content: space-between;
+  /* Centers the logo and links vertically so they are in the middle of the bar */
+  align-items: center;
+  /* Adds 15 pixels of padding on top/bottom, and 5% padding on left/right */
+  padding: 15px 5%;
+  /* Gives the navigation bar a very dark gray background */
+  background: #0a0a0a;
+  /* Adds our signature purple line to the bottom of the navigation bar */
+  border-bottom: 2px solid #8a2be2;
+  /* Makes the navigation bar stick to the screen even when you scroll down */
+  position: sticky;
+  /* Tells the sticky navigation bar to lock at the very top (0 pixels) */
+  top: 0;
+  /* Ensures the sticky navigation bar always sits on top of the other content */
+  z-index: 100;
+}
+
+/* This styles the TEAM GIPA logo text */
+.logo { 
+  /* Changes the color of the logo to purple */
+  color: #a855f7; 
+  /* Removes default margins so it aligns perfectly */
+  margin: 0; 
+}
+
+/* This styles the clickable links inside the navigation bar */
+.nav-links a {
+  /* Changes the link text color to white */
+  color: #ffffff;
+  /* Removes the default blue underline that links usually have */
+  text-decoration: none;
+  /* Adds 20 pixels of space to the left of each link so they aren't touching */
+  margin-left: 20px;
+  /* Makes the link text bold */
+  font-weight: bold;
+  /* Sets the font size for the links */
+  font-size: 0.9rem;
+}
+
+/* This styles the main container that holds the intro and the grid */
+.main-content {
+  /* Forces this container to stretch 100% across the screen */
+  width: 100%;
+  /* Adds 60 pixels of padding on top/bottom, and 5% padding on left/right */
+  padding: 60px 5%;
+  /* Centers all the text and titles perfectly in the middle */
+  text-align: center;
+}
+
+/* This adds space below the introduction section */
+.team-intro { 
+  /* Pushes the grid of cards 60 pixels down from the text */
+  margin-bottom: 60px; 
+}
+
+/* This styles the 'Meet the Team' heading */
+.team-intro h1 { 
+  /* Makes the font very large */
+  font-size: 3.5rem; 
+  /* Changes the heading color to purple */
+  color: #a855f7; 
+  /* Adds a little space below the heading */
+  margin-bottom: 15px;
+}
+
+/* This styles the paragraph describing the team */
+.intro-text {
+  /* Makes the paragraph text slightly larger */
+  font-size: 1.2rem;
+  /* Changes the paragraph text to light gray */
+  color: #aaaaaa;
+  /* Prevents the paragraph from stretching too wide so it stays easy to read */
+  max-width: 800px;
+  /* Centers the paragraph block itself in the middle of the screen */
+  margin: 0 auto;
+  /* Adds space between the lines of text to make it readable */
+  line-height: 1.6;
+}
+
+/* This creates the flexible grid layout that uses all the empty space */
+.team-grid {
+  /* Turns on CSS Grid mode */
+  display: grid;
+  /* Automatically creates columns (at least 400px wide) that grow to fill empty space (1fr) */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  /* Adds 30 pixels of empty space between every card */
+  gap: 30px;
+}
+
+/* This styles the individual boxes (cards) for each member */
+.card {
+  /* Gives the card a very dark gray background */
+  background: #111111;
+  /* Adds 40 pixels of empty space inside the card around the text */
+  padding: 40px;
+  /* Rounds the corners of the card so it looks modern */
+  border-radius: 12px;
+  /* Adds a thick purple accent line to the left side of the card */
+  border-left: 6px solid #8a2be2;
+  /* Tells the browser to smoothly animate any changes (like hovering) over 0.3 seconds */
+  transition: 0.3s ease;
+  /* Adds an invisible space above the card so the sticky navbar doesn't cover it when clicked */
+  scroll-margin-top: 120px; 
+}
+
+/* This controls what happens when the user's mouse hovers over a card */
+.card:hover {
+  /* Makes the card background slightly lighter */
+  background: #161616;
+  /* Lifts the card up by 5 pixels */
+  transform: translateY(-5px);
+  /* Adds a soft purple shadow behind the card to make it glow */
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.15);
+}
+
+/* This highlights the specific card that was clicked in the navigation bar */
+.card:target {
+  /* Makes the clicked card's background lighter than the others */
+  background: #1a1a1a;
+  /* Changes the left accent line from purple to white so it stands out */
+  border-left: 6px solid #ffffff;
+  /* Adds a bright purple glow around the clicked card */
+  box-shadow: 0 0 40px rgba(138, 43, 226, 0.4);
+  /* Makes the clicked card slightly larger than the others */
+  transform: scale(1.02);
+}
+
+/* This styles the member's name inside the card */
+h3 { 
+  /* Colors the name a light purple */
+  color: #d8b4fe; 
+  /* Makes the name font large */
+  font-size: 1.6rem; 
+  /* Removes empty space above the name so it sits correctly in the box */
+  margin-top: 0; 
+}
+
+/* This styles the member's description text inside the card */
+p { 
+  /* Colors the description text light gray */
+  color: #cccccc; 
+  /* Adds space between lines of text */
+  line-height: 1.5; 
+}
